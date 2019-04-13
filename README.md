@@ -1,2 +1,2 @@
 # WebLabotorary
-web test
+just web test
