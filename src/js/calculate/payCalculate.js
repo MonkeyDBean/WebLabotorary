@@ -27,8 +27,8 @@ function callBasePay(arr, minus) {
     beforeSum += arr[i].m;
     specialSum += arr[i].special;
 
-    //需交税总工资：累计收入 - 累计免税收入 - 五险一金扣除 - 累计专项扣除(如住房租金)
-    let preTax = beforeSum - monthExclude * n - minus * n - specialSum;
+    //需交税总工资：累计收入 - 累计免税收入(国企津贴等) - 累计减除费用 - 累计专项扣除(五险一金) - 累计专项附件扣除(如住房租金)
+    let preTax = beforeSum - 0 - monthExclude * n - minus * n - specialSum;
 
     //本月应交税：需交税总额 - 已累计交税
     let tax = calTaxSpeed(preTax) - taxSum;
@@ -83,19 +83,54 @@ function testCallBasePay() {
   const test51 = 2000;
 
   //测试数据
-  let testData = [
-    { m: 30000, special: 0 },
-    { m: 30000, special: 0 },
-    { m: 30000, special: 0 },
-    { m: 30000, special: specialMoney },
-    { m: 30000, special: specialMoney },
-    { m: 30000, special: specialMoney },
-    { m: 30000, special: specialMoney },
-    { m: 30000, special: specialMoney },
-    { m: 30000, special: specialMoney },
-    { m: 30000, special: specialMoney },
-    { m: 30000, special: specialMoney },
-    { m: 30000, special: specialMoney },
+  let testData = [{
+      m: 30000,
+      special: 0
+    },
+    {
+      m: 30000,
+      special: 0
+    },
+    {
+      m: 30000,
+      special: 0
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
+    {
+      m: 30000,
+      special: specialMoney
+    },
   ];
   callBasePay(testData, test51);
   console.log("-----end payCalculate test ------");
