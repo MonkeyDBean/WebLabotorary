@@ -90,3 +90,13 @@
 .triangle {
 	border-color:purple transparent transparent transparent !important;
 }
+
+.heart {
+    width: 10px;
+    height: 10px;
+    position: fixed;
+    background: #f00;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+}
