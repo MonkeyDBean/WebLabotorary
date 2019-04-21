@@ -71,6 +71,9 @@
 	float: right;
 }
 
+.border_test{
+	height: 180px;
+}
 .border_test>div {
 	border-width: 20px;
 	border-color: red blue yellow green;
@@ -99,4 +102,8 @@
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
+}
+
+.pikachu>img{
+	height: 300px;
 }
