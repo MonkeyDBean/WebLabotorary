@@ -13,7 +13,7 @@ function testUrlReg(str) {
  * 第2行：大小大小
  * ...
  * 
- * @param {*} idx 数据序号，从0起底层
+ * @param {*} idx 数据序号，从0起递增
  */
 const getItemSize = (idx) => {
     const isFirstFloor = Math.floor(idx / 4) % 2;
@@ -32,7 +32,7 @@ const getItemSize = (idx) => {
  * 8 9 10 11
  * ...
  * 
- * @param {*} idx 数据序号，从0起底层
+ * @param {*} idx 数据序号，从0起递增
  */
 // const getItemSizeOptimize = (idx) => {
 //     return Math.floor(idx / 4) & 1 && idx & 1 || !(Math.floor(idx / 4) & 1) && !(idx & 1) ? "big" : "small";
