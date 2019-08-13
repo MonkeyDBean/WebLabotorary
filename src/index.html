@@ -70,8 +70,13 @@
             console.log("\n");
             let urlA = "https://a.com";
             let urlB = "https:\\a.com";
+            let urlC = "http://a.com";
+            let urlD = "https://172.16.2.123";
             testUrlReg(urlA);
             testUrlReg(urlB);
+            testIpReg(urlA);
+            testIpReg(urlC);
+            testIpReg(urlD);
             console.log("\n");
             let seqTest1 = getItemSize(5);
             let seqTest2 = getItemSizeOptimize(5);

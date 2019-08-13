@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>touch test</title>
+    <style>
+        html {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body style="height: 100%">
+    <div>
+        <p id="testDisplay">test<p>
+        <a id="cmdMusic" target="_blank">程序员电台</a>
+        <a id="spiral" target="_blank">螺旋效果</a>
+        <a id="periodic" target="_blank">悬浮面板效果</a>
+    </div>
+    <script src="js/other/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="js/clickconsole/click-password.min.js" type="text/javascript"></script>
+    <script src="js/clickconsole/vconsole.min.js" type="text/javascript"></script>
+    <!-- <script src="https://cdn.bootcss.com/vConsole/3.3.2/vconsole.min.js"></script> -->
+    <script crossorigin="anonymous" integrity="sha384-qSrEYLMHSuUya7HioxgwmVKxoqyVbT2Xmu87cJyVwFm1oq4M6Tz5lcdiFrOrS93l" src="https://lib.baomitu.com/fastclick/1.0.6/fastclick.min.js"></script>
+    <script type="text/javascript">
+        // window.vConsole = new VConsole();
+        window.vConsole = new VConsole({
+            onReady: function () {
+                window.vConsole.hideSwitch();
+            }
+        });
+
+        //匹配到密码序列, 单次触发
+        new ClickPassword('ABACD', () => {
+            let localeTime = new Date().toLocaleTimeString();
+            console.log("localeTime is: " + localeTime);
+            $("#testDisplay").text(localeTime);
+            $('#cmdMusic').attr('href','https://cmd.to/');
+            $('#spiral').attr('href','https://spiral.ross.org/spiral/#/');
+            $('#periodic').attr('href','http://periodic.famo.us/');
+            window.vConsole.showSwitch();
+        });
+    </script>
+</body>
+
+</html>

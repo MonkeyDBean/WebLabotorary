@@ -7,6 +7,14 @@ function testUrlReg(str) {
 }
 
 /**
+ * 测试url是否为ip而不是域名
+ */
+function testIpReg(str) {
+    const ipUrlReg = /\/\/\d+\.\d+\.\d+\.\d+/;
+    console.log(str + ": " + ipUrlReg.test(str))
+}
+
+/**
  * 根据序号获取类别，排布规则为
  * 第0行：大小大小
  * 第1行：小大小大
